@@ -1,0 +1,43 @@
+{
+  "name": "Resonator-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.1.2",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/lab": "^3.0.0-alpha.18",
+    "classnames": "^2.2.6",
+    "immutability-helper": "^2.8.1",
+    "keycloak-js": "^4.5.0",
+    "prop-types": "^15.6.2",
+    "qs": "^6.5.2",
+    "react": "^16.5.2",
+    "react-chat-elements": "^10.1.1",
+    "react-dom": "^16.5.2",
+    "react-draggable": "^3.0.5",
+    "react-dropzone": "^7.0.1",
+    "react-media": "^1.8.0",
+    "react-number-field": "^1.0.4",
+    "react-redux": "^5.0.7",
+    "react-responsive": "^5.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4",
+    "redux": "^4.0.0",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

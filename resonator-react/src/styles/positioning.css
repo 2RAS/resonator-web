@@ -1,0 +1,49 @@
+.centered {
+  display:inline-block;
+  position: relative;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.centeredBlockAbs{
+  display:block;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.centeredX {
+  display:inline-block;
+  /*position:relative;*/
+  left:50%;
+  transform: translate(-50%, 0);
+}
+.centeredY {
+  display:inline-block;
+    /*position:relative;*/
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.fullScreen {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+}
+.overflowXHidden{
+  position: absolute;
+  top:0;
+
+  width:100%;
+  left:0;
+  overflw-x:hidden;
+}
+.unselectable{
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}

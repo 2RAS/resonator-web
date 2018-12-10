@@ -1,0 +1,28 @@
+
+.blockLink{
+display:block;
+position:relative;
+/* min-width:15em; */
+overflow:hidden;
+border: inset 1px solid black;
+}
+.blockLink-text{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:white;
+  border-radius:5px;
+  padding:20px;
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-size:200%;
+}
+.blockLink-text_black{
+  color:white;
+  font-weight:bold;
+
+  background:rgb(10,10,10);
+  box-shadow:inline 5px 5px;
+}

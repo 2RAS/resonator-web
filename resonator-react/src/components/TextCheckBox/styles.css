@@ -1,0 +1,14 @@
+.textCheckBox{
+  font-weight: bolder;
+  display:inline-block;
+      vertical-align: middle;
+      text-align:center;
+      cursor:pointer;
+}
+.textCheckBox-checked{
+  color:green;
+}
+.textCheckBox-unchecked{
+  color:grey;
+  text-decoration: line-through;
+}

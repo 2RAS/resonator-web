@@ -1,0 +1,26 @@
+.rentPrice{
+  whiteSpace:'nowrap';
+  background: white;
+  border-radius:5px;
+  padding:10px;
+}
+.rentPrice-periodInput{
+  display:inline;
+  padding-left:0;
+  margin-left:0;
+  padding:0px;
+}
+.rentPrice-priceInput{
+  display:inline;
+  width:4em;
+  background:white;
+  border-radius:5px;
+}
+.rentPrice-periodInputButton{
+    padding-left: 0;
+    background:blue;
+    padding:0;
+    margin:0;
+    display:block;
+    font-weight: bold;
+}

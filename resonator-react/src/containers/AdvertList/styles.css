@@ -1,0 +1,19 @@
+
+
+.advertList{
+  padding:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.advertList-sublist{
+
+  display: flex;
+  flex-direction:row;
+
+}
+
+@media only screen and (max-width: 1250px) {
+
+}

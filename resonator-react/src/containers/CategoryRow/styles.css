@@ -1,0 +1,13 @@
+
+.categorySelect{
+  width:80%;
+  left:0;
+  font-size:200%;
+  height:2em;
+  padding:5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  top:0;
+}

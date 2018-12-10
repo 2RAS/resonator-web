@@ -1,0 +1,84 @@
+{
+  "userapi":{
+    "uri":"176.37.65.30:8200",
+    "endPoints":{
+      "get":"public/get"
+    }
+  },
+  "keycloakmicroserviceapi":{
+    "uri":"176.37.65.30:8220",
+    "endPoints":{
+      "get":"public/get"
+    }
+  },
+  "feedbackapi":{
+    "uri":"176.37.65.30:8205",
+    "endPoints":{
+      "getForUser":"manageFeedbacks/get_feedbacks",
+      "getForAdvert":"manageFeedbacks/get_feedbacks_by_advert",
+      "post":"manageFeedbacks/create_feedback"
+    }
+  },
+  "advertapi":{
+    "uri":"176.37.65.30:8201",
+    "endPoints":{
+      "getAdvert":"manageAdverts/get",
+      "getAdverts":"manageAdverts/getChosen",
+      "getAllAdverts":"manageAdverts/getAll",
+      "createAdvert":"manageAdverts/create",
+      "getCategories":"manageCategories/getAllCategories"
+    }
+  },
+  "searchapi":{
+    "uri":"176.37.65.30:8213",
+    "auth":{
+      "login":"api",
+      "password":"Vac"
+    },
+    "endPoints":{
+      "findAdverts":"advertSearch/findAdvert",
+      "findUsers":"userSearch/findUser"
+    }
+  },
+  "chatapi":{
+    "uri":"",
+    "endPoints":{
+      "update":{
+        "getAllUnreadMessages": "updateChat/getAllUnreadMessages",
+        "getAllUserConversations": "updateChat/getAllUserConversations",
+        "getAllUserConversationMessages": "updateChat/getAllUserConversationMessages"
+      },
+      "admin": {
+        "addChat": "adminChat/addChat",
+        "setDialog": "adminChat/setDialog",
+        "addChatUser": "adminChat/addChatUser",
+        "removeChatUser": "adminChat/removeChatUser",
+        "deleteChat": "adminChat/deleteChat"
+      },
+      "chat": {
+        "addMessage": "addMessage",
+        "getChatById": "getChatById",
+        "getMessageById": "getMessageById",
+        "setMessagesAsReaded": "setMessagesAsReaded"
+      }
+    }
+  },
+  "orderapi":{
+    "uri":"176.37.65.30:8207",
+    "endpoints":{
+      "getGiveOrders":"manageOrders/show_give",
+      "getRetrieveOrders": "manageOrders/show_get",
+      "getNotReturnedOrders":"manageOrders/show_not_isreturn",
+      "getGiveOrdersUntill":"manageOrders/show_depend_date_give",
+      "getRetrieveOrdersUntill": "manageOrders/show_depend_date_get",
+      "getPrice": "manageOrders/getprice",
+      "createOrder": "manageOrders/create_order",
+      "updateTransferStatus": "manageOrders/update_istransfer",
+      "removeByID": "manageOrders/del",
+      "updatePayment": "manageOrders/updatepayment",
+      "updateIsTransfer": "manageOrders/update_istransfer",
+      "updateIsReturn": "manageOrders/update_isreturn",
+      "updateGiveAgree": "manageOrders/update_giveagree"
+    }
+  }
+}
