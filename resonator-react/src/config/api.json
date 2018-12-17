@@ -11,7 +11,7 @@
       "get":"public/get"
     }
   },
-  "feedbackapi":{
+  "feedbackapi_redundant":{
     "uri":"176.37.65.30:8205",
     "endPoints":{
       "getForUser":"manageFeedbacks/get_feedbacks",
@@ -19,7 +19,7 @@
       "post":"manageFeedbacks/create_feedback"
     }
   },
-  "advertapi":{
+  "advertapi_redundant":{
     "uri":"176.37.65.30:8201",
     "endPoints":{
       "getAdvert":"manageAdverts/get",
@@ -29,7 +29,7 @@
       "getCategories":"manageCategories/getAllCategories"
     }
   },
-  "searchapi":{
+  "searchapi_redundant":{
     "uri":"176.37.65.30:8213",
     "auth":{
       "login":"api",

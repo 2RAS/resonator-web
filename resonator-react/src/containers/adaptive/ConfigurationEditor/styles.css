@@ -2,8 +2,7 @@
 
 .ConfigurationEditor{
   padding:5%;
-  background:grey;
-  border-radius:10px;
+  /*background:grey;*/
 }
 .ConfigurationEditor>h3{
   color:white;

@@ -17,7 +17,7 @@ import {connect} from 'react-redux';
   }
  shouldComponentUpdate(nextProps, nextState){
    for (var name of this.trackNames){
-     
+
       this.audio[name].current.volume=nextProps.currConfig[name].volume;
    }
  }
@@ -30,7 +30,7 @@ import {connect} from 'react-redux';
  }
   renderAudio(i){
     return (
-      <audio ref={this.audio[this.trackNames[i]]} mediagroup ='music'>
+      <audio key ={i} ref={this.audio[this.trackNames[i]]} mediaGroup ='music'>
          <source src={this.files[i]}/>
       </audio>
     );

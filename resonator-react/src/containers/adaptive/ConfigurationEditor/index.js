@@ -20,7 +20,7 @@ import './styles.css'
     return (
       <div className = 'ConfigurationEditor'>
         <h3>{this.stateName}</h3>
-        {this.trackNames.map((name,i)=>{return <TrackConfigurationEditor parentState = {this.stateName} trackName = {this.state.trackNames[i]}/>},this)}
+        {this.trackNames.map((name,i)=>{return <TrackConfigurationEditor key={name} parentState = {this.stateName} trackName = {this.state.trackNames[i]}/>},this)}
       </div>
     );
   }
