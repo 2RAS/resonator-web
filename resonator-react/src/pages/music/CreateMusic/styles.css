@@ -52,7 +52,7 @@
   float:right;
 }
 /*   */
-.createAdvert-header{
+.createMusic-header{
   background:#555;
   color:white;
   font-size:9vh;
@@ -61,4 +61,22 @@
   height:10vh;
   position:absolute;;
   left:0;
+}
+.createMusic-exportButton{
+  position:absolute;
+  right:100px;
+  bottom:100px;
+  height:100px;
+  width:200px;
+  background:#ADF;
+  border:none;
+  text-align:center;
+  vertical-align:middle;
+  line-height: 3em;
+  font-size: 200%;
+  font-weight: bold;
+  color:#58B;
+  cursor: crosshair;
+
+  display:block;
 }

@@ -1,8 +1,9 @@
 
 export default class Gain{
-  constructor(id,gain){
+  constructor(id,config){
     this.id  = id;
-    this.value = gain;
+    this.config={
+    }
     this.type = 'gain';
     this.inputs = ['default'];
     this.outputs = ['default'];

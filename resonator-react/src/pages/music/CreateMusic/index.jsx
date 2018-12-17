@@ -11,11 +11,14 @@ import AudioConfigurationHandler from 'containers/adaptive/AudioConfigurationHan
 import PipelineElement from 'containers/adaptive/pipeline/Element'
 import InteractiveObject from 'containers/adaptive/GraphicScreen/InteractiveObject'
 import Draggable from 'react-draggable'
+import LineTo from 'react-lineto'
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from 'store/reducers/musicReducer'
 import './styles.css'
 import {metalExample} from './example.js'
+import JSZip from 'jszip'
+import saveAs from 'file-saver';
 const musicstore = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
@@ -23,46 +26,78 @@ class AdaptiveDemo extends React.Component{
    data = {comment:'hello'};
    files = ['/music/guitar.mp3','/music/drums.mp3','/music/bass.mp3','/music/rhytm_guitar.mp3'];
    trackNames =['guitar','drums','bass', 'rhytm_guitar'];
-   config=metalExample;
    stateNames =['DefaultState','DangerState','AttentionState','NoisyState'];
    data = this.handleFiles
+   constructor(props){
+     super(props);
+     this.state={
+       config:metalExample
+     }
+   }
    changeVolume(trackNum,value){
      this.trackNames[trackNum].value =value;
    }
+   handleStop =(id, e: MouseEvent, data: Object) => {
+    // alert(JSON.stringify(this.config.pipeline.elements[id].position));
+     this.state.config.pipeline.elements[id].position={x:data.x,y:data.y};
+     this.forceUpdate();
+   }
 
-
+   saveAsFile(link, content, filename) {
+    var blob = new Blob([content], {type: "application/json"});
+    var url  = URL.createObjectURL(blob);
+    // update link to new 'url'
+    link.download    = filename + ".json";
+    link.href        = url;
+  }
+   handleConfigExport(e){
+     this.saveAsFile(e.target, JSON.stringify(this.state.config), "config");
+   }
+   handleExport(e){
+     var zip = new JSZip();
+     zip.file("Hello.txt", "Hello World\n");
+     var music = zip.folder("music");
+    // music.file("smile.gif", , {base64: true});
+     zip.generateAsync({type:"blob"})
+     .then(function(content) {
+       // see FileSaver.js
+       saveAs(content, "example.zip");
+});
+   }
   render(){
     var configEditors=[];
     for(var i in this.stateNames) {
       configEditors.push(<ConfigurationEditor key={i} stateName={this.stateNames[i]} volumes={this.volumes} trackNames ={this.trackNames} />);
     }
-    var pipelineElements = Object.keys(this.config.pipeline.elements).map((key)=>{
-      let obj = this.config.pipeline.elements[key]
-      alert(obj.type)
+
+    var pipelineElements = Object.keys(this.state.config.pipeline.elements).map((key)=>{
+      let obj = this.state.config.pipeline.elements[key]
       return (
         <Draggable
           key={key}
           axis="both"
           handle=".handle"
-          defaultPosition={{x: 200, y: 200}}
-          position={null}
+          defaultPosition={obj.position}
+          position={obj.position}
 
           onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
-          <div className="handle">
-            hello
-          <PipelineElement type= {obj.type} id={key} style={{
-              position:'absolute',
+          onDrag={(e,data)=>this.handleStop(key,e,data)}
+          onStop={(e,data)=>this.handleStop(key,e,data)}>
+          <div className="handle" style={{position:'absolute'}}>
+          <PipelineElement type= {obj.type} id={key} config={obj.config} style={{
+              position:'relative',
               width:'200px',height:'80px',
               right:'0',top:'0'}}>hello</PipelineElement>
           </div>
         </Draggable>
       )
-    })
+    });
+    var pipelineConnections = this.state.config.pipeline.connections.stream.map((con)=>{
+        return <LineTo borderWidth='2px' borderColor='red' from= {'pipelineElement-'+con.from.id+'_out_'+con.from.out} to={'pipelineElement-'+con.to.id+'_in_'+con.to.in}/>
+    });
     var html = (
       <div style = {{background:'grey', width:'100%',height:'330vh',position:'absolute',top:0,left:0,overflowX:'hidden'}}>
-        <div className='createAdvert-header' style = {{top:0}}>
+        <div className='createMusic-header' style = {{top:0}}>
           AUDIO PLAYER
         </div>
         <div style = {{background:'lightblue', width:'100%',height:'100vh',position:'absolute',top:'10vh',left:0}}>
@@ -76,8 +111,10 @@ class AdaptiveDemo extends React.Component{
           <div style ={{ position:'absolute',top:'10vh',left:'0px', width:'100%',height:'50vh'}}>
             <GraphicScreen graphicScreen={this.data} />
           </div>
+          <a className='createMusic-exportButton' onClick={this.handleExport.bind(this)}>EXPORT</a>
+          <a className='createMusic-exportButton'style={{bottom:'200px',background:'#BAF',fontSize:'100%',height:'2em'}} onClick={this.handleConfigExport.bind(this)}>EXPORT CONFIG</a>
         </div>
-        <div className = 'createAdvert-header' style = {{top:'110vh'}}>
+        <div className = 'createMusic-header' style = {{top:'110vh'}}>
           PIPELINE BUILDER
         </div>
         <div style = {{background:'lightgreen', width:'100%',height:'100vh',position:'absolute',top:'120vh',left:0}}>
@@ -88,6 +125,7 @@ class AdaptiveDemo extends React.Component{
             background:'#EFE',
             }}>
             {pipelineElements}
+            {pipelineConnections}
             {/*
             <PipelineElement type='gain' id='gain_1' style={{
                 position:'absolute',
@@ -122,7 +160,7 @@ class AdaptiveDemo extends React.Component{
           </ListView>
 
         </div>
-        <div className = 'createAdvert-header' style = {{top:'220vh'}}>
+        <div className = 'createMusic-header' style = {{top:'220vh'}}>
           STATE CONFIGURER
         </div>
         <div style = {{background:'#F33', width:'100%',height:'100vh',position:'absolute',top:'230vh',left:0}}>

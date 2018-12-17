@@ -2,15 +2,17 @@
 
 
 export default class Source{
-  constructor(id,url){
+  constructor(id,config){
     this.id  = id;
-    this.value = url;
+    this.config={
+      url: config.url
+    }
     this.type = 'source';
     this.inputs = [];
     this.outputs = ['default'];
   }
-  changeSource(value){
-    this.value = value;
+  changeSource(url){
+    this.config.url = url;
   }
 
   export(){

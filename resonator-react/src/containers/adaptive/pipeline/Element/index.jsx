@@ -8,11 +8,11 @@ import Output from './type/output'
   constructor(props){
     super();
     if(props.type === 'gain')
-     this.model = new Gain(props.id, (props.gain?props.gain:1))
+     this.model = new Gain(props.id, props.config?props.config:{})
     else if(props.type == 'source')
-      this.model = new Source(props.id, props.source)
+      this.model = new Source(props.id, props.config?props.config:{})
     else if(props.type == 'output')
-      this.model = new Output(props.id, props.source)
+      this.model = new Output(props.id, props.config?props.config:{})
   }
   handleInputClicked(name){
     alert('input clicked')
@@ -22,24 +22,28 @@ import Output from './type/output'
   }
   render(){
     let inputs=this.model.inputs.map(input=>{
+    //  alert('pipelineElement-'+this.model.id+'_in_'+input);
       return (
-        <button key={input} onClick={()=>this.handleInputClicked(input)} style={{
+        <div key={input} className={'pipelineElement-'+this.model.id+'_in_'+input} onClick={()=>this.handleInputClicked(input)} style={{
           width:'100%',textAlign:'center',fontSize:'80%',border:'0',padding:'0px',height:(100/this.model.inputs.length)+'%',
           background:'lightgreen',
         }}>
           {input}
-        </button>
+        </div>
       )
     });
     let outputs=this.model.outputs.map(output=>{
       return (
-        <button key ={output} onClick={()=>this.handleOutputClicked(output)} style={{
+        <div key ={output} className={'pipelineElement-'+this.model.id+'_out_'+output} onClick={()=>this.handleOutputClicked(output)} style={{
           width:'100%',textAlign:'center',fontSize:'80%',border:'0',padding:'0px',height:(100/this.model.outputs.length)+'%',
           background:'lightgreen',
         }}>
           {output}
-        </button>
+        </div>
       )
+    })
+    let configProps =Object.keys(this.model.config).map((key)=>{
+      return (<p>{key}: {this.model.config[key]}</p>)
     })
 
     return (
@@ -81,7 +85,7 @@ import Output from './type/output'
           fontSize:'50%',
           padding:'5px',
         }}>
-
+          {configProps}
         </div>
         </div>
 

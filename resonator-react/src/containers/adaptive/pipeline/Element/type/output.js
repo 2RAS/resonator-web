@@ -1,8 +1,10 @@
 
 export default class Output{
-  constructor(id){
+  constructor(id,config){
     this.id  = id;
     this.type = 'output';
+    this.config={
+    }
     this.inputs = ['default'];
     this.outputs = [];
   }

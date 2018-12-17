@@ -2,74 +2,145 @@
 
 let metalExample ={
   states:{
-
+    DefaultState:{
+      elements:{
+        gain_1:{
+          gain:0.5
+        },
+        gain_2:{
+          gain:0.5
+        },
+        gain_3:{
+          gain:0.5
+        },
+        gain_4:{
+          gain:0.5
+        }
+      }
+    },
+    DangerState:{
+      elements:{
+        gain_1:{
+          gain:0.1
+        },
+        gain_2:{
+          gain:0.7
+        },
+        gain_3:{
+          gain:0.9
+        },
+        gain_4:{
+          gain:0.1
+        }
+      }
+    },
+    AttentionState:{
+      elements:{
+        gain_1:{
+          gain:0.2
+        },
+        gain_2:{
+          gain:0.05
+        },
+        gain_3:{
+          gain:0.5
+        },
+        gain_4:{
+          gain:0.1
+        }
+      }
+    },
+    NoisyState:{
+      elements:{
+        gain_1:{
+          gain:0.8
+        },
+        gain_2:{
+          gain:0.2
+        },
+        gain_3:{
+          gain:0.5
+        },
+        gain_4:{
+          gain:0.5
+        }
+      }
+    }
   },
   pipeline:{
     elements:{
       source_1:{
         position:{
-          x:0,
-          y:0
+          x:10,
+          y:10,
         },
         type:'source',
-        url:'music/bass.mp3',
+        config:{
+            url:'music/bass.mp3'
+        }
       },
       source_2:{
         position:{
-          x:0,
-          y:0
+          x:10,
+          y:100,
         },
         type:'source',
-        url:'music/drums.mp3',
+        config:{
+            url:'music/drums.mp3'
+        }
       },
       source_3:{
         position:{
-          x:0,
-          y:0
+          x:10,
+          y:190,
         },
         type:'source',
-        url:'music/guitar.mp3',
+        config:{
+            url:'music/guitar.mp3'
+        },
       },
       source_4:{
         position:{
-          x:0,
-          y:0
+          x:10,
+          y:280,
         },
         type:'source',
-        url:'music/rhytm_guitar.mp3',
+        config:{
+            url:'music/rhytm_guitar.mp3'
+        }
       },
       gain_1:{
         position:{
-          x:0,
-          y:0
+          x:240,
+          y:20
         },
         type:'gain'
       },
       gain_2:{
         position:{
-          x:0,
-          y:0
+          x:240,
+          y:110
         },
         type:'gain'
       },
       gain_3:{
         position:{
-          x:0,
-          y:0
+          x:240,
+          y:200
         },
         type:'gain'
       },
       gain_4:{
         position:{
-          x:0,
-          y:0
+          x:240,
+          y:290
         },
         type:'gain'
       },
       output_1:{
         position:{
-          x:0,
-          y:0
+          x:600,
+          y:160
         },
         type:'output',
       },
