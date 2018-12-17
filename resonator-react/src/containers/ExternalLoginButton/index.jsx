@@ -16,6 +16,8 @@ class ExternalLoginButton extends React.Component {
  handleLogin =()=>{
    if(this.props.kcInitialized){
       this.props.keycloak.login();
+    }else{
+      alert('wait for it..')
     }
  }
  handleLogout=()=>{

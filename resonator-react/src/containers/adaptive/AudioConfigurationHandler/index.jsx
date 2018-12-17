@@ -42,7 +42,7 @@ closest='Listener';
     return true;
   }
   render(){
-    return <div some ={this.props.states} style={{ top:0, left:0, background:'white',zIndex:100}}> <h1><small>Current state: </small><span style={{color:'red'}}>{this.closest}</span></h1></div>
+    return <div some ={this.props.states} style={{ top:0, left:0, background:'white',zIndex:100}}> <h1><small>Closest Object: </small><span style={{color:'red'}}>{this.closest}</span></h1></div>
   }
 }
 const mapStateToProps = (state)=>{

@@ -9,6 +9,12 @@ const initialState ={
                   Dog:'DangerState',
                   Metro:'NoisyState',
                   TrafficLight:'AttentionState'},
+  stateGainMapHotfix:{
+            DefaultState:'gain_1',
+            DangerState:'gain_2',
+            AttentionState:'gain_3',
+            NoisyState:'gain_4',
+  },
   objectPosition:{Listener:{x:'100',y:'100'}, Dog:{x:'100', y:'100'},Metro:{x:'100', y:'100'},TrafficLight:{x:'100', y:'100'},},
   currentConfig:{'guitar':{volume:0.5},'drums':{volume:0.5},'bass':{volume:0.5},'rhytm_guitar':{volume:0.5}}
 }

@@ -24,26 +24,26 @@ import Output from './type/output'
     let inputs=this.model.inputs.map(input=>{
     //  alert('pipelineElement-'+this.model.id+'_in_'+input);
       return (
-        <div key={input} className={'pipelineElement-'+this.model.id+'_in_'+input} onClick={()=>this.handleInputClicked(input)} style={{
+        <button key={input} className={'pipelineElement-'+this.model.id+'_in_'+input} onClick={()=>this.handleInputClicked(input)} style={{
           width:'100%',textAlign:'center',fontSize:'80%',border:'0',padding:'0px',height:(100/this.model.inputs.length)+'%',
           background:'lightgreen',
         }}>
           {input}
-        </div>
+        </button>
       )
     });
     let outputs=this.model.outputs.map(output=>{
       return (
-        <div key ={output} className={'pipelineElement-'+this.model.id+'_out_'+output} onClick={()=>this.handleOutputClicked(output)} style={{
+        <button key ={output} className={'pipelineElement-'+this.model.id+'_out_'+output} onClick={()=>this.handleOutputClicked(output)} style={{
           width:'100%',textAlign:'center',fontSize:'80%',border:'0',padding:'0px',height:(100/this.model.outputs.length)+'%',
           background:'lightgreen',
         }}>
           {output}
-        </div>
+        </button>
       )
     })
     let configProps =Object.keys(this.model.config).map((key)=>{
-      return (<p>{key}: {this.model.config[key]}</p>)
+      return (<p key={key}>{key}: {this.model.config[key]}</p>)
     })
 
     return (

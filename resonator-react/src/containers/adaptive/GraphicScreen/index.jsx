@@ -7,7 +7,7 @@ function GraphicScreen(props){
   const {graphicScreen} = props;
 
   return(
-    <div style={{'position':'absolute','height':'100%','width':'100%',background:'lightyellow',overflow:'hidden'}}>
+    <div style={{'position':'absolute','height':'100%','width':'100%',background:'#CEE',overflow:'hidden',boxShadow:'0 0 4px 4px rgba(0,0,0,0.5)'}}>
       <Listener style={{'position':'absolute','height':'50%','width':'auto', zIndex:'3'}}/>
         <TrafficLight style = {{position:'absolute',height:'15%', width:'15%',zIndex:'4'}}/>
         <Dog style = {{position:'absolute',height:'15%', width:'15%',zIndex:'4'}}/>

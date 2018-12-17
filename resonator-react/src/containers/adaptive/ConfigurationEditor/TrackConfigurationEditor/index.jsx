@@ -21,7 +21,9 @@ import './styles.css'
   render(){
     return (
       <div className='TrackConfigurationEditor' style = {this.props.style}>
-        <SimpleSlider value = {this.props.states[this.state.parentState][this.state.trackName].volume} label= {this.state.trackName} onChangeVolume ={this.onChangeVolume.bind(this)}/>
+        <SimpleSlider value = {this.props.states[this.state.parentState][this.state.trackName].volume} label= {this.props.gainName} onChangeVolume ={this.onChangeVolume.bind(this)}
+          style={{display:'inline-block'}}/>
+        <span style={{color:'#117'}}> {this.props.states[this.state.parentState][this.state.trackName].volume} </span>
       </div>
     );
   }
@@ -31,7 +33,7 @@ import './styles.css'
 const mapStateToProps = (state)=>{
   return {
     states:state.states,
-    stateg:state.states.DefaultState.guitar.volume
+    stateg:state.states.DefaultState.guitar.volume,
   }
 }
 const mapDispachToProps = (dispach)=>{

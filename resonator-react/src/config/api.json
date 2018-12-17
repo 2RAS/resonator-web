@@ -11,16 +11,16 @@
       "get":"public/get"
     }
   },
-  "feedbackapi_redundant":{
-    "uri":"176.37.65.30:8205",
+  "feedbackapi":{
+    "uri":"176.37.65.30:82050000",
     "endPoints":{
       "getForUser":"manageFeedbacks/get_feedbacks",
       "getForAdvert":"manageFeedbacks/get_feedbacks_by_advert",
       "post":"manageFeedbacks/create_feedback"
     }
   },
-  "advertapi_redundant":{
-    "uri":"176.37.65.30:8201",
+  "advertapi":{
+    "uri":"176.37.65.30:82010000",
     "endPoints":{
       "getAdvert":"manageAdverts/get",
       "getAdverts":"manageAdverts/getChosen",
@@ -29,8 +29,8 @@
       "getCategories":"manageCategories/getAllCategories"
     }
   },
-  "searchapi_redundant":{
-    "uri":"176.37.65.30:8213",
+  "searchapi":{
+    "uri":"176.37.65.30:82130000",
     "auth":{
       "login":"api",
       "password":"Vac"
@@ -64,7 +64,7 @@
     }
   },
   "orderapi":{
-    "uri":"176.37.65.30:8207",
+    "uri":"176.37.65.30:82070000",
     "endpoints":{
       "getGiveOrders":"manageOrders/show_give",
       "getRetrieveOrders": "manageOrders/show_get",

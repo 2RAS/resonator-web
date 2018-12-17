@@ -1,11 +1,11 @@
 {
-  "realm": "Resonator",
+  "realm": "resonator",
   "authServerUrl": "http://176.37.65.30:8666/auth",
   "url": "http://176.37.65.30:8666/auth",
   "redirectUri":"http://176.37.65.30:8111/",
   "sslRequired": "none",
-  "resource": "Resonator_web",
+  "resource": "resonator_web",
   "publicClient": true,
   "confidentialPort": 0,
-  "clientId": "Resonator_web"
+  "clientId": "resonator_web"
 }

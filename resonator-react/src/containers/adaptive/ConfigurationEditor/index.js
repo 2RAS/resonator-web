@@ -10,6 +10,7 @@ import './styles.css'
     super();
     this.stateName =props.stateName;
     this.trackNames =props.trackNames;
+    this.gainNames = props.gainNames;
     this.state={
       trackNames:props.trackNames
     }
@@ -19,8 +20,8 @@ import './styles.css'
     setTimeout((function(){ this.setState({...this.state,trackName1s: this.state.trackNames.map((name)=>{return 'SUB'+name;})});}).bind(this) , 3000)
     return (
       <div className = 'ConfigurationEditor'>
-        <h3>{this.stateName}</h3>
-        {this.trackNames.map((name,i)=>{return <TrackConfigurationEditor key={name} parentState = {this.stateName} trackName = {this.state.trackNames[i]}/>},this)}
+        <h2>{this.stateName}</h2>
+        {this.trackNames.map((name,i)=>{return <TrackConfigurationEditor key={name} parentState = {this.stateName} gainName = {this.gainNames[i]}trackName = {this.trackNames[i]}/>},this)}
       </div>
     );
   }

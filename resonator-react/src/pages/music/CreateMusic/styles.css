@@ -64,11 +64,11 @@
 }
 .createMusic-exportButton{
   position:absolute;
-  right:100px;
-  bottom:100px;
+  right:50px;
+  bottom:50px;
   height:100px;
   width:200px;
-  background:#ADF;
+  background-color:#ADF;
   border:none;
   text-align:center;
   vertical-align:middle;
@@ -76,7 +76,21 @@
   font-size: 200%;
   font-weight: bold;
   color:#58B;
-  cursor: crosshair;
+  cursor:crosshair;
 
   display:block;
+
+  -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.createMusic-exportButton:hover{
+  color:black;
+}
+.createMusic-exportButton:active{
+  background-color:#EBB;
+  box-shadow:inset 0 0 3px 3px rgba(0,0,0,0.2);
 }
