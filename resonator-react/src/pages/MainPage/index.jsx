@@ -15,6 +15,7 @@ import 'styles/positioning.css'
 // test data
 import CREATE_IMG from 'media/create.jpeg'
 import EXPLORE_IMG from 'media/explore.jpeg'
+import MAIN_IMG from 'media/background.jpg'
 import ResonatorLogoImage from 'media/ResonatorLogoImage.png'
 
 class MainPage extends React.Component{
@@ -39,11 +40,11 @@ class MainPage extends React.Component{
   /*   <Button onClick={this.TEST_handleGetAdverts.bind(this)}>AdvertButton</Button>
      <Button onClick={this.TEST_handleCreateAdvertPage.bind(this)}>Create advert page!</Button>*/
     return (
-    <div className='fullScreen'>
+    <div className='fullScreen' style={{backgroundImage:'url('+MAIN_IMG+')'}}>
       <ResonatorLogo image={ResonatorLogoImage} className='mainPage-mainLogo'/>
       <ExternalLoginButton button={{style:{}, className:'mainPage-loginButton'}} style={{zIndex:100}} tokenStyle={{zIndex:100}}/>
       <AdvertSearch className='mainPage-advertSearch' history={this.props.history} > </AdvertSearch>
-      <div className='mainPage-imageLinkContainer'>
+      <div className='mainPage-imageLinkContainer' style={{borderTop:'10px solid black'}}>
         <BlockLink name='Create Adaptive Music!' className='mainPage-imageLink' onClick={this.handleGiveThingsClick.bind(this)} backgroundImage={CREATE_IMG}/>
         <div style={{background:'black',padding:'0', margin:'0'}}>a</div>
         <BlockLink name='Explore Music Archive!' className='mainPage-imageLink' onClick={this.handleTakeThingsClick.bind(this)} backgroundImage={EXPLORE_IMG}/>

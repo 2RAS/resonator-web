@@ -7,7 +7,7 @@ import React from 'react'
 import 'styles/positioning.css'
 import './styles.css'
 // test data
-import Background from 'media/background.png'
+import Background from 'media/background.jpg'
 import AdvertFeedback from 'components/feedback/AdvertFeedback'
 class FeedbackTest extends React.Component{
    constructor(props){

@@ -7,7 +7,7 @@ import qs from 'qs'
 import './styles.css'
 import 'styles/positioning.css'
 // test data
-import Background from 'media/background.png'
+import Background from 'media/background.jpg'
 import FullAdvert from 'containers/FullAdvert'
 
 class ViewAdvert extends React.Component{

@@ -12,7 +12,7 @@ import DetailedAdvertSearch from 'containers/search/DetailedAdvertSearch'
 import AdvertAPI from 'api/AdvertAPI'
 import SearchAPI from 'api/SearchAPI'
 import SearchUtils from 'classes/data/SearchUtils'
-import Background from 'media/background.png'
+import Background from 'media/background.jpg'
 import Media from 'react-media'
 class SearchPage extends React.Component{
    constructor(props){

@@ -25,28 +25,28 @@ class CategorySelect extends React.Component{
    }
    render(){
      var options =[{
-          id:'hats',
-          message:'Headwear',
+          id:'metal',
+          message:'metal',
           options:[
-            {id:'paper_hats',
-              message:'paper hats',
+            {id:'deatch metal',
+              message:'deatch metal',
               options:{}
             },
-            {id:'metal_helmets',
-              message:'metal helmets',
+            {id:'melodic metal',
+              message:'melodic metal',
               options:{}
             }
           ]
         },
-        {   id:'footwear',
-            message:'footwear',
+        {   id:'intrumental',
+            message:'intrumental',
             options:[
-              {id:'sandals',
-                message:'sandals',
+              {id:'guitar',
+                message:'guitar',
                 options:{}
               },
-              {id:'boots',
-                message:'boots',
+              {id:'violin',
+                message:'violin',
                 options:{}
               }
             ]

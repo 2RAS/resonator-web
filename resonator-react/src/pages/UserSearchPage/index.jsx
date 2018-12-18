@@ -13,7 +13,7 @@ import UserAPI from 'api/UserAPI'
 import SearchAPI from 'api/SearchAPI'
 import SearchUtils from 'classes/data/SearchUtils'
 import AdvertUtils from 'classes/data/AdvertUtils'
-import Background from 'media/background.png'
+import Background from 'media/background.jpg'
 import Media from 'react-media'
 class UserSearchPage extends React.Component{
    constructor(props){

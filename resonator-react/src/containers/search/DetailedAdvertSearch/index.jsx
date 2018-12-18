@@ -103,18 +103,9 @@ class AdvertSearch extends React.Component{
                           text={'full text search'}
                           onChange={this.handleFullTextSwitch.bind(this)}/>
           </Media>
-          <LocationInput className='detailedSearch-locationInput' value ={this.props.searchParams.location} onChange={this.handleLocationUpdate.bind(this)}></LocationInput>
         </div>
       </div>
       <div id='detailedSearch-2partsContainer2'>
-        <div className ='detailedSearch-part' id ='detailedSearch-priceTime'>
-          <div>
-            <RentPriceInput name='Min. Price' className='detailedSearch-price' onChange={this.handleMinPriceUpdate.bind(this)} value={this.props.searchParams.minPrice}/><br/>
-            <RentPriceInput name='Max. Price' className='detailedSearch-price' onChange={this.handleMaxPriceUpdate.bind(this)} value={this.props.searchParams.maxPrice}/><br/>
-            <DurationInput name='Min. Renting Time' className='detailedSearch-minDuration' onChange={this.handleMinDurationUpdate.bind(this)} value={this.props.searchParams.minDuration}/>
-
-          </div>
-        </div>
         <div className ='detailedSearch-part' id ='detailedSearch-category'>
           <CategoryRow value = {this.props.searchParams.category} onCategoryUpdate={this.onCategoryUpdate.bind(this)} className='detailedSearch-categoryRow'/>
         </div>
