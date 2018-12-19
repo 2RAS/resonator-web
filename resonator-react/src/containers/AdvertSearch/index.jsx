@@ -8,7 +8,7 @@ class AdvertSearch extends React.Component{
    constructor(props){
      super(props);
      this.state={
-       inputPlaceholder:'A   Search for adverts!'
+       inputPlaceholder:'A   Search for music!'
      };
      this.inputRef = React.createRef();
    }
@@ -17,7 +17,7 @@ class AdvertSearch extends React.Component{
      if(window.innerWidth < 400){
        this.setState({inputPlaceholder:'Search!'});
      } else {
-        this.setState({inputPlaceholder:'        Search for adverts!'});
+        this.setState({inputPlaceholder:'        Search for music!'});
      }
    }
    componentWillMount(){
