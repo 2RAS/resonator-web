@@ -166,6 +166,9 @@ class AdaptiveDemo extends React.Component{
           <div style ={{ position:'absolute',top:'10vh',left:'0px', width:'100%',height:'50vh'}}>
             <GraphicScreen graphicScreen={this.data} />
           </div>
+              <a href="http://176.37.65.30:8991/PatefonCS.zip" className='createMusic-exportButton' style={{width:'250px',textDecoration:'none' ,color:'black', right:'250px', background:'#C85'}}>
+                PATEFON_C#
+              </a>
           <a className='createMusic-exportButton' onClick={this.handleExport.bind(this)}>EXPORT</a>
           <a className='createMusic-exportButton'style={{bottom:'150px',background:'#BAF',fontSize:'100%',height:'2em'}} onClick={this.handleConfigExport.bind(this)}>EXPORT CONFIG</a>
         </div>
