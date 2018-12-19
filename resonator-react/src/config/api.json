@@ -40,7 +40,7 @@
       "findUsers":"userSearch/findUser"
     }
   },
-  "chatapi":{
+  "broadcasterapi":{
     "uri":"",
     "endPoints":{
       "update":{

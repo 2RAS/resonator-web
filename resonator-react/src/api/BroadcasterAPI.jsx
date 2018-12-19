@@ -1,16 +1,16 @@
 import Config from 'config/api.json'
 import request from 'superagent'
 
-class ChatAPI {
+class BroadcasterAPI {
     static createStartURL(fnPath) {
-        return 'http://' + Config.chatapi.uri + '/' + fnPath;
+        return 'http://' + Config.BroadcasterAPI.uri + '/' + fnPath;
     }
 
     /*          UPDATE          */
 
     static getAllUnreadMessages(userId, token) {
       return  request
-            .get(ChatAPI.createStartURL(Config.chatapi.endPoints.getAllUnreadMessages) + '/' + userId)
+            .get(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.getAllUnreadMessages) + '/' + userId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -24,7 +24,7 @@ class ChatAPI {
 
     static getAllUserConversations(userId, token) {
         request
-            .get(ChatAPI.createStartURL(Config.chatapi.endPoints.getAllUserConversations) + '/' + userId)
+            .get(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.getAllUserConversations) + '/' + userId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -37,7 +37,7 @@ class ChatAPI {
 
     static getAllUserConversationMessages(userId, chatId, token) {
         request
-            .get(ChatAPI.createStartURL(Config.chatapi.endPoints.getAllUserConversationMessages) + '/' + userId + '/' + chatId)
+            .get(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.getAllUserConversationMessages) + '/' + userId + '/' + chatId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -52,7 +52,7 @@ class ChatAPI {
 
     static addChat(name, token) {
         request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.addChat) + '/' + name + '/' + -1 + '/' + '')
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.addChat) + '/' + name + '/' + -1 + '/' + '')
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -65,7 +65,7 @@ class ChatAPI {
 
     static setDialog(firstId, secondId, token) {
         request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.setDialog) + '/' + firstId + '/' + secondId)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.setDialog) + '/' + firstId + '/' + secondId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -78,7 +78,7 @@ class ChatAPI {
 
     static addChatUser(chatId, userId, token) {
         request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.addChatUser) + '/' + chatId + '/' + userId)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.addChatUser) + '/' + chatId + '/' + userId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -91,7 +91,7 @@ class ChatAPI {
 
     static removeChatUser(chatId, userId, token) {
         request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.removeChatUser) + '/' + chatId + '/' + userId)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.removeChatUser) + '/' + chatId + '/' + userId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -104,7 +104,7 @@ class ChatAPI {
 
     static deleteChat(chatId, token) {
         request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.deleteChat) + '/' + chatId)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.deleteChat) + '/' + chatId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -120,7 +120,7 @@ class ChatAPI {
     // TODO: add and use Message struct
     static addMessage(smth, token) {
         return  request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.addMessage) + '/' + smth)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.addMessage) + '/' + smth)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -134,7 +134,7 @@ class ChatAPI {
 
     static getChatById(chatId, token) {
         return  request
-            .get(ChatAPI.createStartURL(Config.chatapi.endPoints.getChatById) + '/' + chatId)
+            .get(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.getChatById) + '/' + chatId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -148,7 +148,7 @@ class ChatAPI {
 
     static getMessageById(id, token) {
         return  request
-            .get(ChatAPI.createStartURL(Config.chatapi.endPoints.getMessageById) + '/' + id)
+            .get(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.getMessageById) + '/' + id)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
             .on('error', err => {
@@ -162,7 +162,7 @@ class ChatAPI {
 
     static setMessagesAsReaded(receiverId, authorId, chatId, lastId, token) {
         return  request
-            .put(ChatAPI.createStartURL(Config.chatapi.endPoints.setMessagesAsReaded)
+            .put(BroadcasterAPI.createStartURL(Config.BroadcasterAPI.endPoints.setMessagesAsReaded)
                 + '/' + receiverId + '/' + authorId + '/' + chatId + '/' + lastId)
             .set('Authorization', 'Bearer '+token)
             .set('Content-Type', 'application/json')
@@ -176,4 +176,4 @@ class ChatAPI {
     };
 }
 
-export default ChatAPI;
+export default BroadcasterAPI;
